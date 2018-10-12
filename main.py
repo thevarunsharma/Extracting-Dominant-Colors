@@ -16,5 +16,11 @@ def upload_file():
         return render_template("main.html", after=True, colors=centroids_conc, tot=tot, name=name)
     return render_template("main.html", after=False)
 
+@app.after_request
+def add_header(response):
+    response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1,firefox=1'
+    response.headers['Cache-Control'] = 'public, max-age=0'
+    return response
+
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 app.run(debug = True)

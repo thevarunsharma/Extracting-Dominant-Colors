@@ -2,6 +2,7 @@ import numpy as np
 from imageio import imwrite
 from scipy.misc import imresize
 from sklearn.cluster import k_means
+import os
 
 k = 7
 
@@ -28,6 +29,8 @@ def get_dominant(img):
     conc = l
     compressed = centroids[list(map(int, idx))]
     compressed = np.reshape(compressed,(*resize_dims(img.shape), img.shape[2]))
+    if os.path.isfile("./static/new_image.jpg"): os.remove("./static/new_image.jpg")
+    elif os.path.isfile("./static/new_image.png"): os.remove("./static/new_image.png")
     if img.shape[2]==4:
         name = "new_image.png"
         imwrite("./static/"+name, compressed)
