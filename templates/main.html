@@ -12,7 +12,7 @@
   {% for i in range(7) %}
   <p>
     <div class="perc">{{(colors[i][1]*100/tot)|round(1)}}%</div>
-    <div style="background-color:rgb({{colors[i][0][0]}}, {{colors[i][0][1]}}, {{colors[i][0][2]}}); width:{{colors[i][1]*100/tot}}%; height:2vw; margin-left:6vw;">
+    <div style="background-color:rgb({{colors[i][0]|join(',')}}); width:{{colors[i][1]*100/tot}}%; height:2vw; margin-left:6vw;border:1px dotted black;">
     </div>
   </p>
   {% endfor %}
