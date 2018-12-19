@@ -3,6 +3,7 @@ from werkzeug import secure_filename
 from cluster import get_dominant
 from imageio import imread
 import os
+
 app = Flask(__name__)
 
 @app.route('/', methods = ['GET', 'POST'])
