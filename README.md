@@ -5,4 +5,4 @@ As the original image may be having too large dimensions, which would result in 
 
 Created a web interface for the same using Flask backend, where the user would upload an image and output would be the percentages of different dominant colors in the image, plus, the image masked with just the dominant colors.
 
-<p align="center"><kbd><img src="./demo/dom_colors.png" width="80%"></kbd></p>
+<p align="center"><kbd><img src="./demo/dom_colors.png" width="800vw"></kbd></p>
