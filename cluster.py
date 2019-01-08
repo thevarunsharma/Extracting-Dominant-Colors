@@ -31,10 +31,7 @@ def get_dominant(img):
     compressed = np.reshape(compressed,(*resize_dims(img.shape), img.shape[2]))
     if os.path.isfile("./static/new_image.jpg"): os.remove("./static/new_image.jpg")
     elif os.path.isfile("./static/new_image.png"): os.remove("./static/new_image.png")
-    if img.shape[2]==4:
-        name = "new_image.png"
-        imwrite("./static/"+name, compressed)
-    else:
-        name = "new_image.jpg"
-        imwrite("./static/"+name, compressed)
+    if img.shape[2]==4: name = "new_image.png"
+    else: name = "new_image.jpg"
+    imwrite("./static/"+name, compressed)
     return len(idx), name, sort_it(list(centroids.astype(int)), conc)
