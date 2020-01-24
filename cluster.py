@@ -28,7 +28,7 @@ def get_dominant(img):
         l[i[0]] = i[1]
     conc = l
     compressed = centroids[list(map(int, idx))]
-    compressed = np.reshape(compressed,(*resize_dims(img.shape), img.shape[2]))
+    compressed = np.reshape(compressed,(*resize_dims(img.shape), img.shape[2])).astype('uint8')
     if os.path.isfile("./static/new_image.jpg"): os.remove("./static/new_image.jpg")
     elif os.path.isfile("./static/new_image.png"): os.remove("./static/new_image.png")
     if img.shape[2]==4: name = "new_image.png"
